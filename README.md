@@ -88,3 +88,35 @@ After deployment, Google Cloud Run provided this service URL:
 ![Google Cloud Run deployment](images/N3.1_gcloud_terminal.png)
 
 ![Website deployed on Google Cloud Run](images/N3.1_gcloud_web.png)
+
+## Stopping the Application
+
+### Stop the Local Node.js Server
+
+When the application is running locally with:
+
+```bash
+npm start
+```
+
+press:
+
+```text
+Ctrl + C
+```
+
+in the terminal to stop the Node.js/Express server.
+
+After the server stops, `http://localhost:3000` will no longer be available.
+
+### Cloud Run Service Behavior
+
+Google Cloud Run is serverless and automatically manages application instances based on incoming traffic.
+
+If the deployed service is no longer needed, it can be deleted with:
+
+```bash
+gcloud run services delete cs651-form-data --region us-central1
+```
+
+This removes the deployed Cloud Run service.
