@@ -19,6 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Lightweight endpoint for checking that the service is running.
+app.get('/health', function(req, res) {
+  res.status(200).json({ status: 'ok' });
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

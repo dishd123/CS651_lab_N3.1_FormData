@@ -56,6 +56,16 @@ docker container run -d --name formdata -p 3000:3000 formdata:1.0
 
 The application is then available at [http://localhost:3000](http://localhost:3000).
 
+To verify that the Express service is responding, open
+[http://localhost:3000/health](http://localhost:3000/health) or run:
+
+```bash
+curl http://localhost:3000/health
+```
+
+The endpoint returns `{ "status": "ok" }` when the service is running. The same
+path can be used with the deployed Cloud Run URL.
+
 ![Docker container running](images/N3.1_docker_container.png)
 
 ![Application running locally](images/N3.1_docker_container_web.png)
